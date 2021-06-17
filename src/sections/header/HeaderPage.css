@@ -1,0 +1,40 @@
+.header{
+    height: 100vh;
+    width:100vw ;
+}
+
+.headerImg{
+
+    position: absolute;
+    top: 50vh;
+    left: 10vw;
+    height: 49vh;
+}
+
+.headerText{
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'El Messiri', sans-serif;
+    color: #fff;
+}
+
+.firstHeaderText{
+    transform: translate( 50%);
+    font-weight: 700;
+    font-size: 100px;
+}
+.secondHeaderText{
+    font-weight: 500;
+    font-size: 20px;
+}
+.colorSection{
+    height: 85vh;
+    width:100vw ;
+    background: #cfbe6e ;
+}
+#phone{
+    position: absolute;
+    top: 0;
+}

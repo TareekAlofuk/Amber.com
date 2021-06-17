@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderPage from "./sections/header/HeaderPage";
+import NavBar from "./sections/navBar/NavBar";
+import OurServices from "./sections/ourServices/OurServices";
+import Footer from "./sections/footer/Footer";
+import Popup from "./helperComponents/popup/Popup";
+import * as React from "react";
 
-function App() {
-  return (
+class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {popupIsOpen:false};
+    }
+    changePopupStatus = () => {
+        this.setState({popupIsOpen:!this.state.popupIsOpen})
+        console.log("ok")
+    }
+    render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Popup   isOpen={this.state.popupIsOpen} changePopupStatus={this.changePopupStatus}/>
+        <NavBar changePopupStatus={this.changePopupStatus}/>
+        <HeaderPage/>
+        <OurServices/>
+        <Footer changePopupStatus={this.changePopupStatus}/>
     </div>
   );
+    }
 }
 
 export default App;

@@ -1,0 +1,53 @@
+.footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: rgba(207, 190, 110, 0.6);
+    padding: 100px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.iconContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 140px;
+}
+
+.logoName{
+    width: 140px;
+}
+
+.copyRight{
+    color:#444444;
+}
+
+
+.footerNav{
+    display: flex;
+    flex-direction: row;
+}
+.footerNavItem{
+    font-size: 18px;
+    text-decoration: none;
+    color: #444444;
+    margin: 20px;
+    padding: 5px;
+    transition: .4s ease-out;
+}
+
+.footerNavItem:hover{
+    border-radius: 10px;
+    transform: rotate(1.5deg) scale(1.2);
+}
+.buttonNavItem{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
