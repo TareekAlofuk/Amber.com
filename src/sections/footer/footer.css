@@ -1,29 +1,29 @@
 .footer{
-    height: 50vh;
-    width: 100vw;
+    height: 40vh;
     background-color: rgba(207, 190, 110, 0.6);
     padding: 100px 0 100px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     flex-direction: column;
-}
-.iconContainer{
-    display: flex;
-    flex-direction: column;
+    background-image: linear-gradient(to right bottom, rgba(216, 137, 45 ,.9), rgba(216, 137, 45 ,.6));
+
 }
 
-.logo{
-    width: 140px;
+.iconContainer{
+    display: flex;
+    flex-direction: column
 }
+
+
 
 .logoName{
     width: 140px;
 }
 
 .copyRight{
-    color:#444444;
+    color:#fff;
 }
 
 
@@ -33,8 +33,9 @@
 }
 .footerNavItem{
     font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
-    color: #444444;
+    color: #fff;
     margin: 20px;
     padding: 5px;
     transition: .4s ease-out;
@@ -50,4 +51,45 @@
     padding: 0;
     cursor: pointer;
     outline: inherit;
+    font-family: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+    .footerNavItem {
+        font-size: 14px;
+        margin: 12px;
+    }
+    .logo{
+        width: 120px;
+    }
+
+    .logoName{
+        width: 120px;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .footerNavItem {
+        font-size: 10px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .footerNavItem {
+        font-size: 36px;
+        margin: 20px;
+    }
+    .logo{
+        width: 180px;
+    }
+
+    .logoName{
+        width: 180px;
+    }
+
+    .copyRight{
+        font-size: 30px;
+    }
 }

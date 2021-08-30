@@ -5,14 +5,26 @@
     height: 100vh;
     width: 100vw;
     background-color: rgba( 0 , 0, 0,.8);
+    opacity: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    opacity: 0;
     z-index: 2000000;
+    -webkit-animation-duration: .8s;
     animation-duration: .8s;
+    -webkit-animation-name: popup;
     animation-name: popup;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
@@ -23,10 +35,16 @@
     overflow: scroll;
     padding: 100px 0 100px 0;
     background-color: rgba(255, 255, 255, 1);
+
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-animation-name: popupWindow;
     animation-name: popupWindow;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.3s;
     animation-delay: 0.3s;
+    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
     font-family: 'Cairo', sans-serif;
     text-align: right;
@@ -42,14 +60,28 @@
 .closeIcon{
     width: 50px;
     color: white;
-    background-color:  #cfbe6e;
+    background-color:  #d8892d;
     margin: 10px;
     border-radius: 100px;
+    -webkit-transition: .3s ease-out;
+    -o-transition: .3s ease-out;
     transition: .3s ease-out;
 }
 
 .closeIcon:hover{
+    -webkit-transform: rotate(90deg) scale(1.1);
+    -ms-transform: rotate(90deg) scale(1.1);
     transform: rotate(90deg) scale(1.1);
+}
+
+@-webkit-keyframes popupWindow {
+    0% {
+    }
+
+    100% {
+        width: 60vw;
+        padding: 100px 100px 100px 100px;
+    }
 }
 
 @keyframes popupWindow {
@@ -62,11 +94,12 @@
     }
 }
 
-@keyframes popup {
-    0% {
-    }
+@-webkit-keyframes popup {
+    from {opacity: 0}
+    to {opacity: 100%}
+}
 
-    100% {
-        opacity: 100%;
-    }
+@keyframes popup {
+    from {opacity: 0}
+    to {opacity: 100%}
 }

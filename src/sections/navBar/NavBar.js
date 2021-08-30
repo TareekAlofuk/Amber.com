@@ -4,16 +4,35 @@ import './NavBar.css';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isNavOpen:false}
+        this.state = {isNavOpen: false}
     }
+
     changeNavStatus = () => {
-        this.setState({isNavOpen:!this.state.isNavOpen})
+        this.setState({isNavOpen: !this.state.isNavOpen})
     }
 
     render() {
+        let content = this.props.language === 'ar' ?
+            {
+                navOneText: 'الرئيسية',
+                navTowText: 'خدماتنا',
+                navThreeText: 'من نحن',
+                navFourText: 'العلامات التجارية',
+                navFiveText: 'سياسة الخصوصية',
+                navSixText: 'English'
+            } :
+            {
+                navOneText: 'HOME',
+                navTowText: 'SERVICES',
+                navThreeText: 'ABOUT US',
+                navFourText: 'BRANDS',
+                navFiveText: 'PRIVACY POLICY',
+                navSixText: 'عربي'
+            }
         return (
             <div className="navigation">
-                <input type="checkbox" checked={this.state.isNavOpen} onClick={this.changeNavStatus} className="navigation__checkbox" id="navi-toggle"/>
+                <input type="checkbox" checked={this.state.isNavOpen} onClick={this.changeNavStatus}
+                       className="navigation__checkbox" id="navi-toggle" />
 
                 <label htmlFor="navi-toggle" className="navigation__button">
                     <span className="navigation__icon">&nbsp;</span>
@@ -23,39 +42,56 @@ class NavBar extends React.Component {
 
                 <nav className="navigation__nav">
                     <ul className="navigation__list">
-                        <li className="navigation__item"><a href="/#"
-                                                            onClick={this.changeNavStatus}
-                                                            className="navigation__link"><span>01</span> من
-                            نحن</a></li>
-                        <li className="navigation__item"><a href="/#"
-                                                            onClick={this.changeNavStatus}
+                        <li className="navigation__item">
+                            <a href="/#"
+                               onClick={this.changeNavStatus}
+                               className="navigation__link">
+                                {content.navOneText}
+                            </a>
+                        </li>
 
-                                                            className="navigation__link"><span>02</span> منتجاتنا</a>
+                        <li className="navigation__item">
+                            <a href="/#ourServices"
+                               onClick={this.changeNavStatus}
+                               className="navigation__link">
+                                {content.navTowText}</a>
                         </li>
-                        <li className="navigation__item"><a href="/#"
-                                                            onClick={this.changeNavStatus}
-                                                            className="navigation__link"> <span>03</span>خدماتنا</a>
+                        <li className="navigation__item">
+                            <a href="/#aboutUs"
+                               onClick={this.changeNavStatus}
+
+                               className="navigation__link"> {content.navThreeText}
+                            </a>
                         </li>
-                        <li className="navigation__item"><a href="/#"
-                                                            className="navigation__link"
-                                                            onClick={this.props.changePopupStatus}><span>04</span>سياسة
-                            الخصوصية </a>
+                        <li className="navigation__item">
+                            <a href="/#brands"
+                               onClick={this.changeNavStatus}
+                               className="navigation__link">{content.navFourText}</a>
                         </li>
-                        <li className="navigation__item"><a href="/#"
-                                                            onClick={this.changeNavStatus}
-                                                            className="navigation__link"><span>05</span>يس</a>
+                        <li className="navigation__item">
+                            <a href="/#"
+                               className="navigation__link"
+                               onClick={this.props.changePopupStatus}>{content.navFiveText} </a>
                         </li>
+                        <li className="navigation__item">
+                            <a href="/#"
+                               className="navigation__link"
+                               onClick={() => {
+                                   this.props.changeLanguage();
+                                   this.changeNavStatus();
+                               }}
+                            >
+                                {content.navSixText}
+                            </a>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
 
         );
     }
+
 }
 
 export default NavBar
-// <div className={'NavBar'}>
-//     {/*<svg  height="612px" viewBox="0 0 612 612"  className={"openNavIcon"}>*/}
-//     {/*    <path d="M0,95.625v38.25h612v-38.25H0z M0,325.125h612v-38.25H0V325.125z M0,516.375h612v-38.25H0V516.375z" className={"a"} />*/}
-//     {/*</svg>*/}
-// </div>
